@@ -2,6 +2,7 @@ package com.example.student.a2018011503;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,5 +35,12 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent it=new Intent(MainActivity.this,SettingsActivity.class);
         startActivity(it);
+    }
+    public void click4(View v)//0116m2 讀取xml裡的Preference general的displayname
+    {
+        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
+        String str=sp.getString("example_text","");
+        TextView tv=findViewById(R.id.textView3);
+        tv.setText(str);
     }
 }
