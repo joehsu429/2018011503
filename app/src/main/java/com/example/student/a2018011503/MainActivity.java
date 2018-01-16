@@ -1,5 +1,6 @@
 package com.example.student.a2018011503;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,5 +29,10 @@ public class MainActivity extends AppCompatActivity {
         String str=sp.getString("data1","");
         TextView tv=findViewById(R.id.textView);
         tv.setText(str);
+    }
+    public void click3(View v)//0116m1
+    {
+        Intent it=new Intent(MainActivity.this,SettingsActivity.class);
+        startActivity(it);
     }
 }
